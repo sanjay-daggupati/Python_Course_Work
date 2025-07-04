@@ -1,0 +1,13 @@
+a=int(input())
+for i in range(1,a+1):
+    for j in range(1,i):
+        print(" ",end="")
+    for j in range(1,a-i+2):
+        print("* ",end="")
+    print()
+# 5
+# * * * * *
+#  * * * *
+#   * * *
+#    * *
+#     *
