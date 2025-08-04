@@ -23,8 +23,34 @@ quiz_data = [
         "question": "Which of the following is a mutable data type?",
         "options": ["A. string", "B. int", "C. list", "D. float"],
         "answer": "C"
+    },
+    {
+        "question": "Which function is used to get the length of a list in Python?",
+        "options": ["A. length()", "B. size()", "C. len()", "D. count()"],
+        "answer": "C"
+    },
+    {
+        "question": "What is the output of: bool(0)?",
+        "options": ["A. True", "B. False", "C. None", "D. Error"],
+        "answer": "B"
+    },
+    {
+        "question": "Which of these is not a valid Python loop?",
+        "options": ["A. for", "B. while", "C. loop", "D. none of the above"],
+        "answer": "C"
+    },
+    {
+        "question": "What data structure does {} create?",
+        "options": ["A. List", "B. Set", "C. Dictionary", "D. Tuple"],
+        "answer": "C"
+    },
+    {
+        "question": "Which of the following methods adds an item to a list?",
+        "options": ["A. append()", "B. add()", "C. insert()", "D. extend()"],
+        "answer": "A"
     }
 ]
+
 
 def question_generator(questions):
     for i, q in enumerate(questions):
@@ -45,13 +71,14 @@ def play_quiz(questions):
         answer = input("Your answer (A/B/C/D or STOP to quit): ").strip().upper()
 
         if answer == "STOP":
-            print(f"\n🛑 Quiz stopped. Your score: {score}/{i}")
+            print(f"\n🛑 Quiz stopped. Your score: {score}/{len(quiz_data)}")
             return
 
         if answer == q['answer']:
-            print("✅ Correct!\n")
             score += 1
+            print(f"✅ Correct! \n Your score: {score}/{len(quiz_data)}")
         else:
-            print(f"❌ Wrong! The correct answer is {q['answer']}.\n")
+            print(f"❌ Wrong! The correct answer is {q['answer']}. Your score: {score}/{len(quiz_data)}\n")
 
     print(f"🎉 Quiz completed! Final score: {score}/{len(questions)}")
+play_quiz(quiz_data)
