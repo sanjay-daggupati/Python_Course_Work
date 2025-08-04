@@ -76,7 +76,7 @@ def play_quiz(questions):
 
         if answer == q['answer']:
             score += 1
-            print(f"✅ Correct! \n Your score: {score}/{len(quiz_data)}")
+            print("✅ Correct!")
         else:
             print(f"❌ Wrong! The correct answer is {q['answer']}. Your score: {score}/{len(quiz_data)}\n")
 
