@@ -135,7 +135,7 @@ Ananda.like()
 Ananda.addMusic("Suryudeee godugu patti.mp3")
 Ananda.videolength("Sunrising_video.mp4")
 """
-
+"""
 class Instagram:
     def __init__(self,username):
         self.username=username
@@ -161,3 +161,23 @@ Dinesh=Instagram("Dinesh123")
 Dinesh.uploadPost("GoodMorning.png")
 Sanjay=InstagramVI("orrey_sanjuu","Live everyday of your life as a new chapter")
 Sanjay.uploadPost("GoodEvening.png","Melody")
+"""
+class Instagram:
+    def __init__(self,username):
+        self.username=username
+        print(f"{self.username} user is created ! parent1")
+
+class InstaVI:
+    def __init__(self,username,music):
+        self.username=username
+        self.music=music
+        print(f"{self.username} is created! parent-2")
+        print(f'{self.music} has been added')
+
+class InstaV2(InstaVI):
+    def __init__(self,username,music):
+        Instagram.__init__(self,username)
+        InstaVI.__init__(self,username,music)
+        print("creating users from version3")
+i=InstaV2("Orey_Sanjuu","Powerhouseuu")
+## When we dont use super() for multiple classes we need to user class name like Instagram and referenceing word such as self should be used
